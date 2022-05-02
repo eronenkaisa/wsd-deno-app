@@ -30,3 +30,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APPLICATION_NAME}}
           heroku_email: ${{secrets.HEROKU_EMAIL_ADDRESS}}
+          buildpack: https://github.com/chibat/heroku-buildpack-deno.git
