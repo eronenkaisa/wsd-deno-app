@@ -1,0 +1,8 @@
+<% layout("./layouts/layout.eta") %>
+
+<h1 class="py-2 text-xl">Incorrect!</h1>
+
+<h2 class="py-2 text-xl">The correct option was <%= it.correctOptionText %></h2></br>
+
+
+<a role="button" class="bg-pink-300 hover:bg-pink-400 text-white font-bold py-2 px-2 rounded" href="/quiz/<%= it.tId %>">Next question</a>

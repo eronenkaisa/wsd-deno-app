@@ -1,0 +1,18 @@
+<html>
+<% layout("./layouts/layout.eta") %>
+
+<h1 class="text-xl text-center">Application for repeated practise of learned content</h1><br/>
+<h2 class="text-xl">Description:</h2>
+<p>In this application you can choose from a list of topics which contain multiple-choice questions for repeating learned content. Questions can be answered by yourself and others.</p>
+<p>Administrators can create topics and questions and play quiz. Authenticated users can create questions and play quiz.</p><br/>
+
+<h3 class="text-xl">Current statistics:</h3>
+<p>Number of topics: <%=it.numberOfTopics%></p>
+<p>Number of questions: <%=it.numberOfQuestions%></p>
+<p>Number of answers: <%=it.numberOfAnswers%></p><br/>
+
+<p class="py-2" >You can start by registering here: <a role="button" href="/auth/register" class="bg-pink-300 hover:bg-pink-400 text-white font-bold py-2 px-2 rounded">Register</a></p>
+<p class="py-2" >If you are already registered login here: <a role="button" href="/auth/login" class="bg-pink-300 hover:bg-pink-400 text-white font-bold py-2 px-2 rounded">Login</a></p>
+<p class="py-2" >The topics are availabe here: <a role="button" href="/topics" class="bg-pink-300 hover:bg-pink-400 text-white font-bold py-2 px-2 rounded">See topics</a></p>
+
+</html>

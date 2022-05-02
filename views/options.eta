@@ -1,0 +1,46 @@
+<% layout("./layouts/layout.eta") %>
+
+<h1 class="py-2 text-xl text-center">Options for question: <%= it.questionName %></h1>
+
+<% if (it.options.length == 0 || !it.options) { %>
+    <p>There are currently no options for this question. Do you want to delete this question?</p>
+    <form method="POST" action="/topics/<%= it.topicId %>/questions/<%= it.questionId %>/delete">
+    <input role="button" type="submit" value="Delete question" class="bg-pink-300 hover:bg-pink-400 text-white font-bold py-1 px-1 rounded"/>
+    </form>
+<% } %>
+
+
+<ul>
+    <% it.options.forEach((obj) => { %>
+    <li>
+    <p class="pr-5 inline"><%= obj.option_text %> <%= obj.is_correct %></p>
+    <form method="POST" action="/topics/<%= it.topicId %>/questions/<%= it.questionId %>/options/<%= obj.id %>/delete" class="inline">
+    <input type="submit" value="Delete option" class="bg-pink-300 hover:bg-pink-400 text-white font-bold py-1 px-1 rounded inline"/></br></br> 
+    </form>
+    </li>
+    <% }); %>
+</ul>
+<br/>
+
+
+<h2 class="text-xl">Add option:</h2>
+
+<% if (it.errors && it.errors.length > 0) { %>
+<ul>
+    <% it.errors.forEach((error) => { %>
+        <%= error %>
+    <% }); %>
+</ul>
+<% } %>
+
+<form method="POST" action="/topics/<%= it.topicId %>/questions/<%= it.questionId %>/options">
+Option:<br/>
+<input type="text" name="option_text" class="py-2 px-2 border rounded"/>
+Is it correct?
+<input type="checkbox" name="is_correct" />Yes<br/><br/>
+
+<input type="submit" value="Add" class="bg-pink-300 hover:bg-pink-400 text-white font-bold py-2 px-2 rounded"/><br/>
+</form>
+
+
+

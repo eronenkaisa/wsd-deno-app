@@ -1,0 +1,29 @@
+<% layout("./layouts/layout.eta") %>
+
+<h1 class="py-2 text-xl text-center">Questions for topic: <%= it.topicName %></h1>
+
+<h2 class="text-xl">Add question:</h2>
+
+<% if (it.errors && it.errors.length > 0) { %>
+<ul>
+    <% it.errors.forEach((error) => { %>
+        <%= error %>
+    <% }); %>
+</ul>
+<% } %>
+
+
+<form method="POST" action="/topics/<%= it.topicId %>/questions">
+Question:<br/>
+<input type="text" name="question_text" class="py-2 px-2 border rounded"/><br/><br/>
+<input type="submit" value="Add" class="bg-pink-300 hover:bg-pink-400 text-white font-bold py-2 px-2 rounded"/>
+</form>
+<br/>
+
+<h2 class="text-xl">Current questions:</h2>
+<ul>
+    <% it.questions.forEach((obj) => { %>
+    <li><p class="py-2 hover:underline pr-5"><a href="/topics/<%= it.topicId %>/questions/<%= obj.id %>"><%= obj.question_text %></a></li>
+    <% }); %>
+</ul>
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>App!</title>
+</head>
+
+<nav class="px-2 sm:px-4 py-5 bg-pink-300">
+  <div class="container">
+    <div class="block">
+      <ul class="flex flex-row space-x-8 mt-0">
+        <li>
+          <a href="/topics" class="py-2 pl-100 text-xl text-white bg-blue-700 rounded bg-transparent">Topics</a>
+        </li>
+        <li>
+          <a href="/quiz" class="py-2 pl-100 text-xl text-white bg-blue-700 bg-transparent">Quiz</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="min-h-screen p-20 bg-pink-100">
+  <div class="bg-white p-4 max-w-[75%] container mx-auto rounded-lg">
+    <%~ it.body %>
+  </div>
+</div>
+
+
+</body>
+</html>

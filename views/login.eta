@@ -1,0 +1,21 @@
+<% layout("./layouts/layout.eta") %>
+
+<h1 class="py-2 text-xl text-center">Login form</h1>
+
+<% if (it.errors && it.errors.length > 0) { %>
+<ul>
+    <% it.errors.forEach((error) => { %>
+        <%= error %>
+    <% }); %>
+</ul>
+<% } %>
+
+<form method="POST" action="/auth/login">
+    Email:<br/>
+    <input type="email" name="email" class="py-2 px-2 border rounded" /><br/><br/>
+    Password:<br/>
+    <input type="password" name="password" class="py-2 px-2 border rounded"/><br/><br/>
+    <input role="button" type="submit" value="Login" class="bg-pink-300 hover:bg-pink-400 text-white font-bold py-2 px-2 rounded"/>
+</form>
+
+<p class="py-2">Not yet registered? <a role="button" href="/auth/register" class="bg-pink-300 hover:bg-pink-400 text-white font-bold py-2 px-2 rounded">Register here.</a></p>

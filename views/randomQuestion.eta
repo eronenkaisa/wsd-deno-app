@@ -1,0 +1,18 @@
+<% layout("./layouts/layout.eta") %>
+
+<h1 class="py-2 text-xl text-center">Question is: <%= it.question.question_text %></h1>
+
+<% if (it.options.length == 0) { %>
+    <p> There are currently no options for this question </p>
+<% } %>
+
+<ul>
+    <% it.options.forEach((obj) => { %>
+    <li>
+        <%= obj.option_text %>
+        <form method="POST" action="/quiz/<%= it.question.topic_id %>/questions/<%= obj.question_id %>/options/<%= obj.id %>" class="inline">
+            <input type="submit" value="Choose" class="bg-pink-300 hover:bg-pink-400 text-white font-bold py-1 px-1 rounded inline"/></br></br>
+        </form>
+    </li>
+    <% }); %>
+</ul>

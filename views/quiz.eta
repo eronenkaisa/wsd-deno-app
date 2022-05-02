@@ -1,0 +1,12 @@
+<% layout("./layouts/layout.eta") %>
+
+
+<h2 class="py-2 text-xl text-center">Choose the topic for the quiz</h2>
+<ul>
+    <% it.topics.forEach((obj) => { %>
+    <li>
+    <p class="hover:underline"><a href="/quiz/<%= obj.id %>"><%= obj.name %></a></p>
+    </li>
+    <% }); %>
+</ul>
+
